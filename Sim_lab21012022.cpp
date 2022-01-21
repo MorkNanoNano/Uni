@@ -5,6 +5,13 @@
 
 using namespace std;
 
+struct evento{
+    double p1[4];
+    double p2[4];
+    bool segnale;
+    double mass_inv;
+};
+
 int main(){
 
     fstream infile;
