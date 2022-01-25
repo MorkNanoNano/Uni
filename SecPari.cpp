@@ -6,9 +6,9 @@ bool sec_pari(int *x, int dimx, int p);
 
 int main(){
 
-    int dimX = 10;
-    int x[dimX] = {10,3,6,4,8,5,7,2,5,7};
-    int p = 3;
+    int dimX = 4;
+    int x[dimX] = {3,6,8,5,};
+    int p = 2;
 
     if(sec_pari(x,dimX,p))
         cout << "BOB" << endl;
@@ -20,14 +20,14 @@ bool sec_pari(int *x, int dimX, int p){
     bool condition = false;
     int count = 0;
     for(int i = 0; i < dimX; i++){
-        while(x[i] % 2 == 0){
+        if(x[i] % 2 == 0)
             count ++;
-        }
-        if(count >= p)
-            condition = true;
-
-        else if(count < p)
+        else if(x[i] % 2 != 0)
             count = 0;
-    }
-return condition;
+        if(count == p){
+            condition = true;
+            break;
+            }
+        }
+    return condition;
 }
