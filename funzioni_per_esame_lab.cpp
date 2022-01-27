@@ -13,8 +13,7 @@ using namespace std;
     fstream f;
     f.open(filename, ios::in);
     if (!f.good()){
-        cout << "Problema con il file da leggere" << endl;
-        return -1;
+        throw runtime_error("Problema con il file da leggere");
     }
      
     ... *read = new ...[N];
